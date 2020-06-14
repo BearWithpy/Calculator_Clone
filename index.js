@@ -8,6 +8,14 @@ let res;
 let numArr = [];
 let opArr = [];
 
+function swap(arr, sw1, sw2) {
+    let temp;
+    temp = arr[sw1];
+    arr[sw1] = arr[sw2];
+    arr[sw2] = temp;
+    return arr
+}
+
 function paintNumber(event) {
     if (firstNumChecker) {
         result.innerHTML = "";
@@ -51,9 +59,10 @@ function operateFn(tg) {
             tg.push(ans);
             tg.push("+");
             if (tg[1] !== "+" || tg[1] !== "-" || tg[1] !== "*" || tg[1] !== "/") {
-                temp = tg[1];
-                tg[1] = tg[2];
-                tg[2] = temp;
+                swap(tg, 1, 2);
+                // temp = tg[1];
+                // tg[1] = tg[2];
+                // tg[2] = temp;
             }
             break;
         case "-":
@@ -62,9 +71,10 @@ function operateFn(tg) {
             tg.push(ans);
             tg.push("-");
             if (tg[1] !== "+" || tg[1] !== "-" || tg[1] !== "*" || tg[1] !== "/") {
-                temp = tg[1];
-                tg[1] = tg[2];
-                tg[2] = temp;
+                swap(tg, 1, 2);
+                // temp = tg[1];
+                // tg[1] = tg[2];
+                // tg[2] = temp;
             }
             break;
         case "*":
@@ -73,9 +83,10 @@ function operateFn(tg) {
             tg.push(ans);
             tg.push("*");
             if (tg[1] !== "+" || tg[1] !== "-" || tg[1] !== "*" || tg[1] !== "/") {
-                temp = tg[1];
-                tg[1] = tg[2];
-                tg[2] = temp;
+                swap(tg, 1, 2);
+                // temp = tg[1];
+                // tg[1] = tg[2];
+                // tg[2] = temp;
             }
             break;
         case "/":
@@ -84,9 +95,10 @@ function operateFn(tg) {
             tg.push(ans);
             tg.push("/");
             if (tg[1] !== "+" || tg[1] !== "-" || tg[1] !== "*" || tg[1] !== "/") {
-                temp = tg[1];
-                tg[1] = tg[2];
-                tg[2] = temp;
+                swap(tg, 1, 2);
+                // temp = tg[1];
+                // tg[1] = tg[2];
+                // tg[2] = temp;
             }
             break;
         default:
@@ -110,9 +122,10 @@ function operatePaint(event) {
         opArr = operateFn(opArr);
         let tmp;
         if (opArr[2] !== opArr[3]) {
-            tmp = opArr[3];
-            opArr[3] = opArr[5];
-            opArr[5] = tmp;
+            swap(opArr, 3, 5);
+            // tmp = opArr[3];
+            // opArr[3] = opArr[5];
+            // opArr[5] = tmp;
         }
         opArr = opArr.slice(4, 7);
         console.log(opArr);
