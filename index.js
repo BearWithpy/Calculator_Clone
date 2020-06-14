@@ -46,7 +46,6 @@ function ansFn() {
         opArr.splice(0, 1);
         opArr.push(answer);
     }
-    //opArr.push(answer);
 }
 
 function operateFn(tg) {
@@ -84,9 +83,7 @@ function operateFn(tg) {
             tg.push("*");
             if (tg[1] !== "+" || tg[1] !== "-" || tg[1] !== "*" || tg[1] !== "/") {
                 swap(tg, 1, 2);
-                // temp = tg[1];
-                // tg[1] = tg[2];
-                // tg[2] = temp;
+
             }
             break;
         case "/":
@@ -96,9 +93,7 @@ function operateFn(tg) {
             tg.push("/");
             if (tg[1] !== "+" || tg[1] !== "-" || tg[1] !== "*" || tg[1] !== "/") {
                 swap(tg, 1, 2);
-                // temp = tg[1];
-                // tg[1] = tg[2];
-                // tg[2] = temp;
+
             }
             break;
         default:
@@ -123,9 +118,7 @@ function operatePaint(event) {
         let tmp;
         if (opArr[2] !== opArr[3]) {
             swap(opArr, 3, 5);
-            // tmp = opArr[3];
-            // opArr[3] = opArr[5];
-            // opArr[5] = tmp;
+
         }
         opArr = opArr.slice(4, 7);
         console.log(opArr);
@@ -137,7 +130,6 @@ function operatePaint(event) {
 function clearFn(event) {
     result.innerHTML = 0;
     opArr.splice(0, opArr.length);
-    //console.log(opArr);
     firstNumChecker = true;
 }
 
