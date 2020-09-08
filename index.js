@@ -3,6 +3,7 @@ const numberBtn = document.querySelectorAll(".number"),
   operationBtn = document.querySelectorAll(".op"),
   equalBtn = document.querySelector(".equals"),
   cancelBtn = document.querySelector("#acBtn");
+
 let firstNumChecker = true;
 let res;
 let numArr = [];
@@ -59,11 +60,9 @@ function operateFn(tg) {
       tg.push("+");
       if (tg[1] !== "+" || tg[1] !== "-" || tg[1] !== "*" || tg[1] !== "/") {
         swap(tg, 1, 2);
-        // temp = tg[1];
-        // tg[1] = tg[2];
-        // tg[2] = temp;
       }
       break;
+
     case "-":
       ans = tg[0] - tg[2];
       result.innerHTML = ans;
@@ -71,11 +70,9 @@ function operateFn(tg) {
       tg.push("-");
       if (tg[1] !== "+" || tg[1] !== "-" || tg[1] !== "*" || tg[1] !== "/") {
         swap(tg, 1, 2);
-        // temp = tg[1];
-        // tg[1] = tg[2];
-        // tg[2] = temp;
       }
       break;
+
     case "*":
       ans = tg[0] * tg[2];
       result.innerHTML = ans;
@@ -85,6 +82,7 @@ function operateFn(tg) {
         swap(tg, 1, 2);
       }
       break;
+
     case "/":
       ans = tg[0] / tg[2];
       result.innerHTML = ans;
@@ -94,6 +92,7 @@ function operateFn(tg) {
         swap(tg, 1, 2);
       }
       break;
+
     default:
       break;
   }
@@ -102,6 +101,7 @@ function operateFn(tg) {
 
 function operatePaint(event) {
   const tg = event.target.innerHTML;
+
   if (opArr.length === 1) {
     opArr.push(tg);
   } else {
@@ -109,7 +109,7 @@ function operatePaint(event) {
     opArr.push(tg);
   }
 
-  console.log(opArr);
+  //console.log(opArr);
   res = 0;
   if (opArr.length >= 3) {
     opArr = operateFn(opArr);
@@ -118,7 +118,7 @@ function operatePaint(event) {
       swap(opArr, 3, 5);
     }
     opArr = opArr.slice(4, 7);
-    console.log(opArr);
+    //console.log(opArr);
   }
 
   firstNumChecker = true;
